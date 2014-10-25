@@ -55,7 +55,7 @@ class Weather(ComplexModel):
 class modelPredictService(ServiceBase):
 
     @rpc(Date,Unicode,Unicode,_returns=Float)
-    def weibo_query(ctx,date,city,tag):
+    def query_weibo(ctx,date,city,tag):
         if city==u'BJ':
             data=np.load('data/BJ_weibo_yuyi_result.npy')
         elif city==u'SH':
