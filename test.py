@@ -114,10 +114,9 @@ def modelpredict(date,city,today_weibo_good,today_weibo_bad,
     inputdata_list=input_data_set.values()
     print inputdata_list
 
-    # trained_machine=cPickle.load(file('machine.pkl','rb'))
-    # out_data = trained_machine.predict(inputdata_list)
-    # out_data = list(out_data)
-    # return out_data
+    trained_machine=cPickle.load(file('machine.pkl','rb'))
+    out_data = trained_machine.predict(inputdata_list)
+    return out_data[0]
     
 
 
@@ -135,7 +134,7 @@ yestoday_weibo_good=weibo_query(yesterday,city,'good')
 today_weather= query_weather(today,city)
 yestoday_weather=query_weather(yesterday,city)
 
-modelpredict(today,city,today_weibo_good,today_weibo_bad,
+print modelpredict(today,city,today_weibo_good,today_weibo_bad,
                  yestoday_weibo_good,
                  today_weather,yestoday_weather)
 

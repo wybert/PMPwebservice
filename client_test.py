@@ -43,11 +43,22 @@ aday=datetime.timedelta(days=1)
 today=datetime.date(2014,1,3)    
 yesterday=today-aday
 city='SH'       
-today_weibo_good=c.service.weibo_query(today,city,'good')
-today_weibo_bad=c.service.weibo_query(today,city,'bad')
-yestoday_weibo_good=c.service.weibo_query(yesterday,city,'good')
+today_weibo_good=c.service.query_weibo(today,city,'good')
+today_weibo_bad=c.service.query_weibo(today,city,'bad')
+yestoday_weibo_good=c.service.query_weibo(yesterday,city,'good')
 today_weather= c.service.query_weather(today,city)
 yestoday_weather=c.service.query_weather(yesterday,city)
+
+print today
+print city
+print today_weibo_good
+print today_weibo_bad
+print yestoday_weibo_good
+print today_weather
+print yestoday_weather
+
+
+
 
 print c.service.modelpredict(today,city,today_weibo_good,today_weibo_bad,
                  yestoday_weibo_good,

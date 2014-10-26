@@ -118,13 +118,9 @@ class modelPredictService(ServiceBase):
         input_data_set['Rain2']=today_weather.Rain
         input_data_set['Haze2']=today_weather.Haze
         inputdata_list=input_data_set.values()
-        print inputdata_list
-
         trained_machine=cPickle.load(file('machine.pkl','rb'))
         out_data = trained_machine.predict(inputdata_list)
-        # out_data = list(out_data)
-        # out_data=1.0
-        return out_data
+        return out_data[0]
    
         
 application = Application([modelPredictService],
