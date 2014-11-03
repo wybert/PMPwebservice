@@ -134,6 +134,6 @@ if __name__ == '__main__':
     # supposed to use it in production.
     from wsgiref.simple_server import make_server
     wsgi_app = WsgiApplication(application)
-    server = make_server('0.0.0.0', 8000, wsgi_app)
-#    server=make_server(' 172.23.77.1',8000,wsgi_app)
+    # server = make_server('0.0.0.0', 8001, wsgi_app)
+    server=make_server('192.168.3.248',8001,wsgi_app)
     server.serve_forever()

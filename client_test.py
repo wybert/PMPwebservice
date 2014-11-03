@@ -27,7 +27,7 @@ import datetime
 # test = c.factory.create('floatArray')
 # test.float=input_test
 # print c.service.predict(test)
-url=u'http://localhost:8000/?wsdl'
+url=u'http://192.168.3.248:8001/?wsdl'
 c=suds.client.Client(url)
 print c
 # date=datetime.date(2014,1,3)
@@ -42,12 +42,19 @@ print c
 aday=datetime.timedelta(days=1)
 today=datetime.date(2014,1,3)    
 yesterday=today-aday
+
+
+
 city='SH'       
+
+
 today_weibo_good=c.service.query_weibo(today,city,'good')
 today_weibo_bad=c.service.query_weibo(today,city,'bad')
 yestoday_weibo_good=c.service.query_weibo(yesterday,city,'good')
 today_weather= c.service.query_weather(today,city)
 yestoday_weather=c.service.query_weather(yesterday,city)
+
+
 
 print today
 print city

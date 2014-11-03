@@ -73,11 +73,14 @@ def query_weather(date,city):
     for item in data:
         if item[0]==date:
             return_data = item
+    print len(return_data)
     weather={}
     keys=['date','temperature','humid','pressure','wind_speed','wind_dir','Blowing','Clouds',
-    'Grains','Sand','Light','Clear','Overcast','Freezing','Snow','Float',
+    'Grains','Sand','Light','Clear','Overcast','Freezing','Snow',
     'Rain','Thunderstorm','Haze','Fog','Cloudy','Showers','Drizzle','Dust',
     'Mist','Thunderstorms','RainQ']
+
+    print len(keys)
     for i,item in enumerate(return_data):
 #        print i,item
         weather[keys[i]]=item
@@ -87,7 +90,7 @@ def query_weather(date,city):
 
 
 
-##define mode predictservice
+#define mode predictservice
 
 
 def modelpredict(date,city,today_weibo_good,today_weibo_bad,

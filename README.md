@@ -12,6 +12,13 @@ data文件夹里的是胡数据
 运行myServey.py就可以发布服务了
 有个客户端代码示例：client_test.py
 
+## 在使用git提交的时候出现如下错误
+```python
+warning: LF will be replaced by CRLF in machine.pkl.
+The file will have its original line endings in your working directory.
+``` 
+训练好的模型被序列化后在传输的过程中可能不够稳定，若服务出现无法运行，请告诉我要machine.pkl原始文件
+
 API说明
 ========
 
